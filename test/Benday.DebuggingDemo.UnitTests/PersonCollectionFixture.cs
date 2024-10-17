@@ -92,6 +92,8 @@ public class PersonCollectionFixture
 
         return person;
     }
+
+
     [Fact]
     public void GetEnumerable_ReturnsSorted()
     {
