@@ -6,6 +6,7 @@ public class NameFixture
 {
     [Theory]
     [InlineData("", "", false)]
+    [InlineData("  ", "   ", false)]
     [InlineData(".", ",", false)]
     [InlineData("Betty", "", false)]
     [InlineData("", "Mooks", false)]
@@ -35,10 +36,12 @@ public class NameFixture
 
     [Theory]
     [InlineData("", "", "")]
+    [InlineData("  ", "   ", "")]
     [InlineData(".", ",", ". ,")]
-    [InlineData("Betty", "", "Betty (Unknown)")]
-    [InlineData("", "Mooks", "(Unknown) Mooks")]
+    [InlineData("Betty", "", "Betty")]
+    [InlineData("", "Mooks", "Mooks")]
     [InlineData("Betty", "Mooks", "Betty Mooks")]
+    [InlineData(" Betty ", " Mooks ", "Betty Mooks")]
     public void ToString_Value(string firstName, string lastName, string expected)
     {
         // arrange
