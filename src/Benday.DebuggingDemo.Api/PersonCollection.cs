@@ -1,6 +1,6 @@
 ﻿namespace Benday.DebuggingDemo.Api;
 
-public class PersonCollection : List<Person>
+public class PersonCollection : List<Person>, IEnumerable<Person>
 {
     public new void Add(Person person)
     {
@@ -11,6 +11,16 @@ public class PersonCollection : List<Person>
 
         base.Add(person);
     }
+
+    /*
+    public new IEnumerable<Person> GetEnumerator()
+    {
+        var sortedList = this.OrderBy(x => x.Name.LastName)
+            .ThenBy(x => x.Name.FirstName);
+
+        return sortedList;
+    }
+    */
 }
 
 
