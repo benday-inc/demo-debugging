@@ -114,11 +114,14 @@ public class PersonCollectionFixture
 
         var expected = new List<Person>()
         {
-            valid3, valid0, valid3, valid4, valid2
+            valid3, valid0, valid4, valid2, valid1
         };
 
         // act
         var actual = new List<Person>();
+
+        // these should be in alphabetical order
+        // by last name then first name
         foreach (var item in systemUnderTest)
         {
             actual.Add(item);
@@ -139,3 +142,4 @@ public class PersonCollectionFixture
     }
 
 }
+

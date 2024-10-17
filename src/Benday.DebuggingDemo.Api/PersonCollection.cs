@@ -12,15 +12,13 @@ public class PersonCollection : List<Person>, IEnumerable<Person>
         base.Add(person);
     }
 
-    /*
-    public new IEnumerable<Person> GetEnumerator()
+    public new IEnumerator<Person> GetEnumerator()
     {
         var sortedList = this.OrderBy(x => x.Name.LastName)
             .ThenBy(x => x.Name.FirstName);
 
-        return sortedList;
-    }
-    */
+        return sortedList.GetEnumerator();
+    }    
 }
 
 
