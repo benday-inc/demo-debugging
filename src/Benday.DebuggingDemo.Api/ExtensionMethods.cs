@@ -17,4 +17,28 @@ public static class ExtensionMethods
 
         return !foundAtLeastOneValidCharacter;
     }
+
+    public static bool IsAllDigits(this string input)
+    {
+        if (string.IsNullOrWhiteSpace(input) == true)
+        {
+            return false;
+        };
+
+        foreach (var character in input)
+        {
+            if (char.IsDigit(character) == false)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static bool IsEmpty(this string input)
+    {
+        return string.IsNullOrWhiteSpace(input);
+    }
+
 }
